@@ -1,7 +1,6 @@
 
 package finalproject;
 
-import finalproject.Genres;
 import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
@@ -14,19 +13,17 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
-import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 
 public class FXMLDocumentController implements Initializable{
     File f = new File("tv.txt");
-    ArrayList<TV> tv = loadFileTV(f);
+    ArrayList<TV> tv = new ArrayList(); //loadFileTV(f);
     File f2 = new File("mov.txt");
-    ArrayList<Movie> mov = loadFileMOV(f2);
+    ArrayList<Movie> mov = new ArrayList(); //loadFileMOV(f2);
     // Toggle ListView
     @FXML
     RadioButton movieToggle = new RadioButton();
@@ -103,20 +100,22 @@ public class FXMLDocumentController implements Initializable{
                     list.getItems().add(ep);
                 }
             }
-            if(list.getItems() == 0){
+            //if(list.getItems() == 0){
                 
             }
-        }
+        
         }
         
         
         // configure slider
+/*
         ratingFilter.setShowTickLabels(true);
         ratingFilter.setBlockIncrement(1);
         ratingFilter.getValue();
         int rating = (int)(ratingFilter.getValue());
         // Set genres to enum
         genreFilter.setItems(FXCollections.observableArrayList(Genres.values()));
-    }    
+*/    
+}    
     
-}
+
