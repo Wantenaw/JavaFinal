@@ -1,34 +1,35 @@
-
-package finalproject;
-
-import finalproject2.Genres;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package finalproject2;
 
 /**
  *
  * @author wille
  */
-public class TV {
+public class Movie {
     // values
-    private String tv = "TV";
+    private String mov = "MOV";
     private String title = "";
-    private String creator = "Unknown";
+    private String director = "Unknown";
     private int year;
     private int rating = 0;
     private int seasons = 1;
     private Genres g = Genres.Unknown;
     // tv object
-    public TV(String tv, String t, String c, int y, int r, int s, Genres g){
-        tv = getType();
+    public Movie(String mov, String t, String d, int y, int r, Genres g){
+        mov = getType();
         this.setTitle(t);
-        this.setCreator(c);
+        this.setDirector(d);
         this.setYear(y);
         this.setRating(r);
-        this.setSeasons(s);
         this.setGenre(g);
     }
     // getters and setters for values
     public String getType(){
-        return this.tv;
+        return this.mov;
     }
     public String getTitle(){
         return this.title;
@@ -36,11 +37,11 @@ public class TV {
     public void setTitle(String t){
         this.title = t;
     }
-    public String getCreator(){
-        return this.creator;
+    public String getDirector(){
+        return this.director;
     }
-    public void setCreator(String c){
-        this.creator = c;
+    public void setDirector(String d){
+        this.director = d;
     }
     public int getYear(){
         return this.year;
@@ -66,23 +67,15 @@ public class TV {
             this.rating = 0;
         }
     }
-    public int getSeasons(){
-        return this.seasons;
-    }
-    public void setSeasons(int s){
-        if(s >= 1){
-            this.seasons = s;
-        }
-    }
     public Genres getGenre(){
         return this.g;
     }
     public void setGenre(Genres g){
         this.g = g;
     }
-    @Override
     public String toString(){
-        return getType()+": "+getTitle()+", Created by "+getCreator()+" | "
-                +getGenre()+" | "+getSeasons()+" Season(s) | "+getYear()+" | "+getRating()+".0 Rating";
+        return getType()+": "+getTitle()+", Created by "+getDirector()+" | "
+                +getGenre()+" | "+getYear()+" | "+getRating()+".0 Rating";
     }
 }
+

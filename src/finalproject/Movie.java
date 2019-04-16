@@ -5,6 +5,8 @@
  */
 package finalproject;
 
+import finalproject2.Genres;
+
 /**
  *
  * @author wille

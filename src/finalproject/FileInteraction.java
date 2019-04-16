@@ -1,6 +1,9 @@
 
 package finalproject;
 
+import finalproject2.Movie;
+import finalproject2.Genres;
+import finalproject2.TV;
 import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;

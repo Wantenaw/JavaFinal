@@ -1,7 +1,5 @@
 
-package finalproject;
-
-import finalproject2.Genres;
+package finalproject2;
 
 /**
  *
@@ -80,7 +78,6 @@ public class TV {
     public void setGenre(Genres g){
         this.g = g;
     }
-    @Override
     public String toString(){
         return getType()+": "+getTitle()+", Created by "+getCreator()+" | "
                 +getGenre()+" | "+getSeasons()+" Season(s) | "+getYear()+" | "+getRating()+".0 Rating";
