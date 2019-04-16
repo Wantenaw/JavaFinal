@@ -13,15 +13,16 @@ public class TV {
     private int year;
     private int rating = 0;
     private int seasons = 1;
-    //private Genre;
+    private Genres g = Genres.Unknown;
     // tv object
-    public TV(String tv, String t, String c, int y, int r, int s){
+    public TV(String tv, String t, String c, int y, int r, int s, Genres g){
         tv = getType();
         this.setTitle(t);
         this.setCreator(c);
         this.setYear(y);
         this.setRating(r);
         this.setSeasons(s);
+        this.setGenre(g);
     }
     // getters and setters for values
     public String getType(){
@@ -71,8 +72,14 @@ public class TV {
             this.seasons = s;
         }
     }
+    public Genres getGenre(){
+        return this.g;
+    }
+    public void setGenre(Genres g){
+        this.g = g;
+    }
     public String toString(){
-        return getType()+": "+getTitle()+", Created by "+getCreator()+" | "+getSeasons()+
-                " Season(s) | "+getYear()+" | "+getRating()+".0 Rating";
+        return getType()+": "+getTitle()+", Created by "+getCreator()+" | "
+                +getGenre()+" | "+getSeasons()+" Season(s) | "+getYear()+" | "+getRating()+".0 Rating";
     }
 }
