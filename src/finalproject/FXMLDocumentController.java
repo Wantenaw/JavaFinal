@@ -19,9 +19,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 
-public class FXMLDocumentController implements Initializable {
+public class FXMLDocumentController implements Initializable {/*
     ArrayList<TV> tv = loadFileTV();
-    ArrayList<Movie> mov = loadFileMOV();
+    ArrayList<Movie> mov = loadFileMOV();*/
     // Toggle ListView
     @FXML
     RadioButton movieToggle = new RadioButton();
@@ -81,11 +81,11 @@ public class FXMLDocumentController implements Initializable {
         movieToggle.setToggleGroup(type);
         movieToggle.setSelected(true);
         tvToggle.setToggleGroup(type);
-        if(movieToggle.isChecked() == true){
+       /* if(movieToggle.isChecked() == true){
             list.setItems(FXCollections.observableArrayList(mov));
         } else {
             list.setItems(FXCollections.observableArrayList(tv));
-        }
+        }*/
         // configure slider
         ratingFilter.setShowTickLabels(true);
         ratingFilter.setBlockIncrement(1);
