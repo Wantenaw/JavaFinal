@@ -2,7 +2,9 @@
 package finalproject;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -18,18 +20,16 @@ import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 
 public class FXMLDocumentController implements Initializable {
+    ArrayList<TV> tv = new ArrayList();
+    ArrayList<Movie> mov = new ArrayList();
     // Toggle ListView
     @FXML
     RadioButton movieToggle = new RadioButton();
     @FXML
     RadioButton tvToggle = new RadioButton();
-    ToggleGroup type = new ToggleGroup();/*
-    movieToggle.setToggleGroup(type);
-    movieToggle.setSelected(true);
-    tvToggle.setToggleGroup(type);*/
-    
+    ToggleGroup type = new ToggleGroup();
+            
     // Filters
-    @FXML
     TextField titleFilter = new TextField();
     String title = titleFilter.getText();
     // read file to find title
@@ -42,14 +42,10 @@ public class FXMLDocumentController implements Initializable {
     Integer year = Integer.parseInt(yearFilter.getText());
     // read file for year
     @FXML
-    Slider ratingFilter =  new Slider(0, 10, 0);/*
-    ratingFilter.setShowTickLabels(true);
-    ratingFilter.setBlockIncrement(1);
-    ratingFilter.getValue();
-    int rating = ratingFilter.getValue(); */
+    Slider ratingFilter =  new Slider(0, 10, 0);
     @FXML
-    ChoiceBox<String> genreFilter = new ChoiceBox();
-    // reads enum and fills with options
+    ChoiceBox<Genres> genreFilter = new ChoiceBox();
+    
     @FXML
     TextField seasonCount = new TextField();
     Integer seasons = Integer.parseInt(seasonCount.getText());
@@ -81,7 +77,17 @@ public class FXMLDocumentController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        // configure radio buttons
+        movieToggle.setToggleGroup(type);
+        movieToggle.setSelected(true);
+        tvToggle.setToggleGroup(type);
+        // configure slider
+        ratingFilter.setShowTickLabels(true);
+        ratingFilter.setBlockIncrement(1);
+        ratingFilter.getValue();
+        int rating = (int)(ratingFilter.getValue());
+        // Set genres to enum
+        genreFilter.setItems(FXCollections.observableArrayList(Genres.values()));
     }    
     
 }

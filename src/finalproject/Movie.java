@@ -73,6 +73,7 @@ public class Movie {
     public void setGenre(Genres g){
         this.g = g;
     }
+    @Override
     public String toString(){
         return getType()+": "+getTitle()+", Created by "+getDirector()+" | "
                 +getGenre()+" | "+getYear()+" | "+getRating()+".0 Rating";
