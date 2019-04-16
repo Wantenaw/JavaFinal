@@ -17,14 +17,15 @@ public class Movie {
     private int year;
     private int rating = 0;
     private int seasons = 1;
-    //private Genre;
+    private Genres g = Genres.Unknown;
     // tv object
-    public Movie(String mov, String t, String d, int y, int r){
+    public Movie(String mov, String t, String d, int y, int r, Genres g){
         mov = getType();
         this.setTitle(t);
         this.setDirector(d);
         this.setYear(y);
         this.setRating(r);
+        this.setGenre(g);
     }
     // getters and setters for values
     public String getType(){
@@ -66,9 +67,15 @@ public class Movie {
             this.rating = 0;
         }
     }
+    public Genres getGenre(){
+        return this.g;
+    }
+    public void setGenre(Genres g){
+        this.g = g;
+    }
     public String toString(){
-        return getType()+": "+getTitle()+", Created by "+getDirector()+
-                " | "+getYear()+" | "+getRating()+".0 Rating";
+        return getType()+": "+getTitle()+", Created by "+getDirector()+" | "
+                +getGenre()+" | "+getYear()+" | "+getRating()+".0 Rating";
     }
 }
 
