@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package finalproject2;
+package finalproject;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -14,7 +14,7 @@ import javafx.fxml.Initializable;
  *
  * @author James
  */
-public class AddItemController implements Initializable {
+public class EditItemController implements Initializable {
 
     /**
      * Initializes the controller class.
