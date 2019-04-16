@@ -21,8 +21,10 @@ import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 
 public class FXMLDocumentController implements Initializable {/*
-    ArrayList<TV> tv = loadFileTV();
-    ArrayList<Movie> mov = loadFileMOV();*/
+    File f = new File("tv.txt");
+    ArrayList<TV> tv = loadFileTV(f);
+    File f2 = new File("mov.txt");
+    ArrayList<Movie> mov = loadFileMOV(f2);*/
     // Toggle ListView
     @FXML
     RadioButton movieToggle = new RadioButton();
