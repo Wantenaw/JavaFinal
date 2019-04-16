@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox layoutY="-2.0" prefHeight="800.0" prefWidth="600.0">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e8e8e8" height="28.0" layoutX="46.0" layoutY="36.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                        <Label layoutX="98.0" layoutY="38.0" text="Film Tracker" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="100.0" prefWidth="356.0">
+                     <children>
+                        <ComboBox fx:id="sortCombo" layoutX="118.0" layoutY="52.0" prefHeight="50.0" prefWidth="215.0" promptText="Sort By" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+            <HBox prefHeight="702.0" prefWidth="600.0">
+               <children>
+                  <VBox prefHeight="698.0" prefWidth="240.0">
+                     <children>
+                        <AnchorPane prefHeight="148.0" prefWidth="240.0">
+                            <fx:define>
+                                <ToggleGroup fx:id="type"/>
+                            </fx:define>
+                            <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e8e8e8" height="129.0" layoutX="17.0" layoutY="1.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                              <Label layoutX="53.0" layoutY="14.0" text="Toggle List Type" />
+                              <RadioButton fx:id="movieToggle" layoutX="35.0" layoutY="39.0" mnemonicParsing="true" prefHeight="37.0" prefWidth="92.0" text="Movies" toggleGroup="$type" />
+                              <RadioButton fx:id="tvToggle" layoutX="35.0" layoutY="73.0" mnemonicParsing="true" prefHeight="37.0" prefWidth="166.0" text="Television" toggleGroup="$type" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e8e8e8" height="322.0" layoutX="18.0" layoutY="3.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                              <Label layoutX="55.0" layoutY="17.0" text="Filter By" />
+                              <TextField fx:id="titleFilter" layoutX="74.0" layoutY="45.0" prefHeight="31.0" prefWidth="140.0" />
+                              <Label layoutX="31.0" layoutY="50.0" text="Title" />
+                              <TextField fx:id="dirFilter" layoutX="30.0" layoutY="97.0" prefHeight="31.0" prefWidth="182.0" />
+                              <Label layoutX="31.0" layoutY="73.0" prefHeight="31.0" prefWidth="117.0" text="Director /Creator" />
+                              <TextField fx:id="yearFilter" layoutX="74.0" layoutY="139.0" prefHeight="31.0" prefWidth="140.0" />
+                              <Label layoutX="33.0" layoutY="141.0" text="Year" />
+                              <Slider layoutX="90.0" layoutY="183.0" prefHeight="18.0" prefWidth="108.0" />
+                              <Label layoutX="32.0" layoutY="182.0" text="Rating" />
+                              <Label layoutX="84.0" layoutY="184.0" text="0">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="196.0" layoutY="184.0" text="10">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <ChoiceBox fx:id="genreFilter" layoutX="84.0" layoutY="213.0" prefHeight="31.0" prefWidth="126.0" />
+                              <Label layoutX="32.0" layoutY="218.0" text="Genre" />
+                              <TextField fx:id="seasonCount" layoutX="69.0" layoutY="273.0" prefHeight="31.0" prefWidth="59.0" />
+                              <Label layoutX="33.0" layoutY="252.0" text="Number of Seasons" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="225.0" prefWidth="240.0">
+                           <children>
+                              <Button fx:id="addBtn" layoutX="50.0" layoutY="16.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="140.0" text="Add to Database" />
+                              <Button fx:id="editBtn" layoutX="50.0" layoutY="75.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="140.0" text="Edit Selected" />
+                              <Button fx:id="delBtn" layoutX="50.0" layoutY="134.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="140.0" text="Delete Selected" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+                  <AnchorPane prefHeight="698.0" prefWidth="361.0">
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e8e8e8" height="676.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" width="342.0" />
+                        <ListView fx:id="list" layoutX="6.0" layoutY="5.0" prefHeight="665.0" prefWidth="331.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
