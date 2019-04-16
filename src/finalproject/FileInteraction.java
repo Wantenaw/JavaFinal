@@ -11,9 +11,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FileInteraction{
-    public void writeFileTV(ArrayList<TV> t){
+    public void writeFileTV(ArrayList<TV> t, File f){
         try{
-            File f = new File("tv.txt");
             RandomAccessFile raf = new RandomAccessFile(f, "rw");
             for(int x = 0 ; t.size() < x ; x++){
                 String type = (t.get(x).getType());
@@ -91,10 +90,9 @@ public class FileInteraction{
             
         }
     }
-    public ArrayList<Movie> loadFileMOV(){
+    public ArrayList<Movie> loadFileMOV(File f){
         ArrayList<Movie> m = new ArrayList();
         try{
-            File f = new File("mov.txt");
             RandomAccessFile raf = new RandomAccessFile(f, "rw");
             while(raf.readLine().equals(true)){
                 String type = String.valueOf(raf.readUTF());
@@ -166,9 +164,8 @@ public class FileInteraction{
         }
         return m;
     }
-    public void writeFileMOV(ArrayList<Movie> t){
+    public void writeFileMOV(ArrayList<Movie> t, File f){
         try{
-            File f = new File("mov.txt");
             RandomAccessFile raf = new RandomAccessFile(f, "rw");
             for(int x = 0 ; t.size() < x ; x++){
                 String type = (t.get(x).getType());
@@ -244,10 +241,9 @@ public class FileInteraction{
             
         }
     }
-    public ArrayList<TV> loadFileTV(){
+    public ArrayList<TV> loadFileTV(File f){
         ArrayList<TV> t = new ArrayList();
         try{
-            File f = new File("tv.txt");
             RandomAccessFile raf = new RandomAccessFile(f, "rw");
             while(raf.readLine().equals(true)){
                 String type = String.valueOf(raf.readUTF());
